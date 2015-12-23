@@ -38,9 +38,11 @@ var objUtil = {
     for (var ix = 0; ix < keys.length; ix++) {
       var theKey = keys[ ix ];
       temp = temp[ theKey ];
-      if ( typeof temp === 'undefined' || temp === null ) {
-        temp = null;
-        break;
+      if (typeof temp === 'undefined') {
+        return undefined;
+      }
+      if ( temp === null ) {
+        return null;
       }
     }
     return temp;
